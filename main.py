@@ -1,12 +1,16 @@
 import csv
+import pandas
 
 from stock_list import Stock_object_list
 import stock_price
 
 class Autofolio(object):
+
+    def __init__(self, name=input('ファイル名を入力して下さい：')):
+        self.name = name
+
     def autofolio_calculate(self):
-        name = input('ファイル名を入力して下さい：')
-        with open(name, 'w') as autofolio:
+        with open(self.name + '.csv', 'w') as autofolio:
             fieldnames = ['ティッカーシンボル', '持株数', '資産額']
             yen = input('現金資産（日本円）を入力して下さい：')
             yen = int(yen)
@@ -24,3 +28,11 @@ class Autofolio(object):
             writer.writerow({'ティッカーシンボル': '現金',
                              '資産額': dor + (yen / stock_price.exchange())}
                             )
+
+    def csv_to_excel(self):
+        data = pandas.read_csv(self.name + '.csv')
+        data.to_excel(self.name + '.xlsx', encoding='utf-8')
+
+pf = Autofolio()
+pf.autofolio_calculate()
+pf.csv_to_excel()
