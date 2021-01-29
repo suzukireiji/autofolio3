@@ -1,14 +1,12 @@
 import stock_price
 
 stock_list = {
-    'spxl': 466,
+    'spxl': 493,
     'zi': 54,
-    'docu': 5,
-    'fb': 4,
     'plug': 95,
-    'rprx': 23,
-    'shop': 1,
-    'tsla': 3
+    'rprx': 42,
+    'gdrx': 58,
+    'ai': 15
 }
 
 class Stock_object_list(object):

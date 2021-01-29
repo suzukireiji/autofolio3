@@ -44,8 +44,8 @@ stock_list = {
     'fb': 4,
     'plug': 95,
     'rprx': 23,
-    'shop': 1,
-    'tsla': 3
+    'gdrx': 58,
+    'ai': 15
 }
 
 
